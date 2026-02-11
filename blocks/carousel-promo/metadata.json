@@ -1,0 +1,32 @@
+{
+  "variantName": "carousel-promo",
+  "baseBlock": "carousel",
+  "version": "1.0.0",
+  "created": "2026-02-11T11:10:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.vodafone.es/c/particulares/es/",
+    "originPage": "Vodafone Spain homepage",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "spacious",
+    "purpose": "promo-carousel",
+    "imagePattern": "large",
+    "structure": "badge + heading + subtitle + price + 2 CTAs per slide"
+  },
+  "contentPattern": {
+    "structure": "image + promotional text + pricing + CTAs",
+    "buttonCount": 2,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": ["homepage hero areas", "promotional landing pages", "offer showcases"],
+    "notSuitableFor": ["blog posts", "documentation pages", "simple image galleries"]
+  },
+  "usage": {
+    "pagesUsing": ["content/c/particulares/es/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-02-11T11:10:00.000Z"
+  }
+}

@@ -1,0 +1,142 @@
+/* Columns Media - Vodafone Media Section (e.g., Vodafone TV) */
+
+.columns-media-wrapper {
+  margin: 0;
+}
+
+.columns-media-container {
+  margin: 0;
+  padding: 0;
+}
+
+.columns-media-container > div {
+  max-width: 100%;
+  padding: 0;
+}
+
+.columns-media-container .default-content-wrapper {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: var(--container-padding);
+}
+
+.columns-media-container .default-content-wrapper h2 {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.columns-media {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  overflow: hidden;
+}
+
+.columns-media > div {
+  display: flex;
+  flex-direction: column;
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+}
+
+.columns-media > div > div {
+  order: 1;
+}
+
+.columns-media > div > .columns-media-img-col {
+  order: 0;
+  line-height: 0;
+}
+
+.columns-media > div > .columns-media-img-col img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Text column */
+.columns-media > div > div:not(.columns-media-img-col) {
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.columns-media > div > div:not(.columns-media-img-col) h2 {
+  color: var(--color-white);
+  font-size: 28px;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.columns-media > div > div:not(.columns-media-img-col) p {
+  color: var(--color-grey-2);
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0 0 16px;
+}
+
+/* Price display */
+.columns-media > div > div:not(.columns-media-img-col) p:has(strong) {
+  color: var(--color-white);
+  font-size: 16px;
+  margin: 16px 0 8px;
+}
+
+.columns-media > div > div:not(.columns-media-img-col) p strong {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-white);
+}
+
+/* CTA button */
+.columns-media > div > div:not(.columns-media-img-col) .button-container {
+  margin-top: 16px;
+}
+
+.columns-media > div > div:not(.columns-media-img-col) a.button {
+  display: inline-block;
+  background-color: var(--color-red);
+  border: 2px solid var(--color-red);
+  color: var(--color-white);
+  padding: 8px 28px;
+  border-radius: 25px;
+  font-size: 16px;
+  text-decoration: none;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.columns-media > div > div:not(.columns-media-img-col) a.button:hover {
+  background-color: var(--color-red-hover);
+  border-color: var(--color-red-hover);
+}
+
+@media (width >= 900px) {
+  .columns-media > div {
+    flex-direction: row;
+    min-height: 500px;
+  }
+
+  .columns-media > div > div {
+    flex: 1;
+    order: unset;
+  }
+
+  .columns-media > div > div:not(.columns-media-img-col) {
+    padding: 48px 64px;
+  }
+
+  .columns-media > div > div:not(.columns-media-img-col) h2 {
+    font-size: 36px;
+  }
+
+  .columns-media > div > div:not(.columns-media-img-col) p strong {
+    font-size: 64px;
+  }
+
+  .columns-media > div > .columns-media-img-col {
+    flex: 0 0 50%;
+  }
+}

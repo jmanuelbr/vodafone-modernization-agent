@@ -1,9 +1,46 @@
-/* header and nav layout */
+/* Vodafone Header */
+
+header nav p {
+  margin: 0;
+  line-height: 1;
+}
+
+header nav a:any-link {
+  color: currentcolor;
+  text-decoration: none;
+}
+
+/* Top bar - green phone banner */
+header .nav-top-bar {
+  background-color: #008a00;
+  color: var(--color-white);
+  font-size: 14px;
+  padding: 8px 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+header .nav-top-bar a {
+  color: var(--color-white);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+header .nav-top-bar a:hover {
+  text-decoration: underline;
+}
+
+/* Nav wrapper */
 header .nav-wrapper {
-  background-color: var(--background-color);
+  background-color: var(--color-white);
   width: 100%;
-  z-index: 2;
-  position: fixed;
+  z-index: 10;
+  position: sticky;
+  top: 0;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 8%);
 }
 
 header nav {
@@ -13,11 +50,11 @@ header nav {
     'hamburger brand tools' var(--nav-height)
     'sections sections sections' 1fr / auto 1fr auto;
   align-items: center;
-  gap: 0 24px;
+  gap: 0 16px;
   margin: auto;
   max-width: 1248px;
   height: var(--nav-height);
-  padding: 0 24px;
+  padding: 0 16px;
   font-family: var(--body-font-family);
 }
 
@@ -32,13 +69,14 @@ header nav[aria-expanded='true'] {
 
 @media (width >= 900px) {
   header .nav-wrapper {
-    position: relative;
+    position: sticky;
+    top: 0;
   }
 
   header nav {
     display: flex;
     justify-content: space-between;
-    gap: 0 32px;
+    gap: 0 24px;
     max-width: 1264px;
     padding: 0 32px;
   }
@@ -47,15 +85,6 @@ header nav[aria-expanded='true'] {
     min-height: 0;
     overflow: visible;
   }
-}
-
-header nav p {
-  margin: 0;
-  line-height: 1;
-}
-
-header nav a:any-link {
-  color: currentcolor;
 }
 
 /* hamburger */
@@ -72,11 +101,12 @@ header nav .nav-hamburger button {
   border: 0;
   border-radius: 0;
   padding: 0;
-  background-color: var(--background-color);
-  color: inherit;
+  background-color: transparent;
+  color: var(--color-black);
   overflow: initial;
   text-overflow: initial;
   white-space: initial;
+  cursor: pointer;
 }
 
 header nav .nav-hamburger-icon,
@@ -148,9 +178,23 @@ header .nav-brand {
   line-height: 1;
 }
 
+/* stylelint-disable-next-line no-descending-specificity */
+header nav .nav-brand a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
 header nav .nav-brand img {
-  width: 128px;
-  height: auto;
+  width: 32px;
+  height: 32px;
+}
+
+@media (width >= 900px) {
+  header nav .nav-brand img {
+    width: 48px;
+    height: 48px;
+  }
 }
 
 /* sections */
@@ -170,11 +214,12 @@ header nav[aria-expanded='true'] .nav-sections {
 header nav .nav-sections ul {
   list-style: none;
   padding-left: 0;
-  font-size: var(--body-font-size-s);
+  font-size: 16px;
 }
 
 header nav .nav-sections ul > li {
-  font-weight: 500;
+  font-weight: 700;
+  color: var(--color-black);
 }
 
 header nav .nav-sections ul > li > ul {
@@ -226,6 +271,7 @@ header nav .nav-sections ul > li > ul > li {
     display: flex;
     gap: 24px;
     margin: 0;
+    font-size: 14px;
   }
 
   header nav .nav-sections .default-content-wrapper > ul > li {
@@ -242,11 +288,14 @@ header nav .nav-sections ul > li > ul > li {
     display: block;
     position: absolute;
     left: -24px;
-    width: 200px;
+    width: 220px;
     top: 150%;
     padding: 16px;
-    background-color: var(--light-color);
+    background-color: var(--color-white);
     white-space: initial;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgb(0 0 0 / 12%);
+    z-index: 10;
   }
 
   header nav .nav-sections .default-content-wrapper > ul > li > ul::before {
@@ -258,15 +307,37 @@ header nav .nav-sections ul > li > ul > li {
     height: 0;
     border-left: 8px solid transparent;
     border-right: 8px solid transparent;
-    border-bottom: 8px solid var(--light-color);
+    border-bottom: 8px solid var(--color-white);
   }
 
   header nav .nav-sections .default-content-wrapper > ul > li > ul > li {
     padding: 8px 0;
+  }
+
+  header nav .nav-sections .default-content-wrapper > ul > li > ul > li a {
+    color: var(--color-grey-4);
+  }
+
+  header nav .nav-sections .default-content-wrapper > ul > li > ul > li a:hover {
+    color: var(--color-red);
   }
 }
 
 /* tools */
 header nav .nav-tools {
   grid-area: tools;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+header nav .nav-tools a {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-black);
+}
+
+header nav .nav-tools a:hover {
+  color: var(--color-red);
 }

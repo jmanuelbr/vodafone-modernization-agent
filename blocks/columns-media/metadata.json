@@ -1,0 +1,32 @@
+{
+  "variantName": "columns-media",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2026-02-11T11:10:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.vodafone.es/c/particulares/es/",
+    "originPage": "Vodafone Spain homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "spacious",
+    "purpose": "media-promo",
+    "imagePattern": "large",
+    "structure": "image column + text column (heading + description + logos + price + CTA)"
+  },
+  "contentPattern": {
+    "structure": "image + rich text with logos and pricing",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": ["TV/streaming promos", "media service sections", "entertainment showcases"],
+    "notSuitableFor": ["simple text layouts", "pricing tables", "navigation sections"]
+  },
+  "usage": {
+    "pagesUsing": ["content/c/particulares/es/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-02-11T11:10:00.000Z"
+  }
+}

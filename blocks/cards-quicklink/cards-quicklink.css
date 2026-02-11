@@ -1,0 +1,94 @@
+/* Cards Quicklink - Vodafone Quick Action Links */
+
+.cards-quicklink-wrapper {
+  margin: 0;
+}
+
+.cards-quicklink-container > div {
+  padding: 0 16px;
+}
+
+.cards-quicklink > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cards-quicklink > ul > li {
+  background-color: var(--color-white);
+  border-radius: 24px;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 16%);
+  overflow: hidden;
+  transition: box-shadow 0.2s ease;
+}
+
+.cards-quicklink > ul > li:hover {
+  box-shadow: 0 4px 16px rgb(0 0 0 / 20%);
+}
+
+.cards-quicklink .cards-quicklink-card-image {
+  display: none;
+}
+
+.cards-quicklink .cards-quicklink-card-body {
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+}
+
+.cards-quicklink .cards-quicklink-card-body p {
+  margin: 0;
+  flex: 1;
+}
+
+.cards-quicklink .cards-quicklink-card-body a.button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: none;
+  border: none;
+  color: var(--color-black);
+  font-size: 18px;
+  font-weight: 400;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  border-radius: 0;
+}
+
+.cards-quicklink .cards-quicklink-card-body a.button:hover {
+  background: none;
+  color: var(--color-red);
+  text-decoration: none;
+}
+
+.cards-quicklink .cards-quicklink-card-body a.button::after {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid var(--color-grey-3);
+  border-bottom: 2px solid var(--color-grey-3);
+  transform: rotate(-45deg);
+  flex-shrink: 0;
+  margin-left: 12px;
+}
+
+@media (width >= 900px) {
+  .cards-quicklink > ul {
+    flex-direction: row;
+    gap: 16px;
+  }
+
+  .cards-quicklink > ul > li {
+    flex: 1;
+  }
+
+  .cards-quicklink .cards-quicklink-card-body a.button {
+    font-size: 20px;
+  }
+}

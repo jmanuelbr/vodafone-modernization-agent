@@ -1,0 +1,75 @@
+/* Cards Feature - Vodafone Feature Pills */
+
+.cards-feature-wrapper {
+  margin: 0;
+}
+
+.cards-feature > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cards-feature > ul > li {
+  background-color: var(--color-white);
+  border-radius: 32px;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: box-shadow 0.2s ease;
+  cursor: default;
+}
+
+.cards-feature > ul > li:hover {
+  box-shadow: 0 2px 8px rgb(0 0 0 / 12%);
+}
+
+.cards-feature .cards-feature-card-image {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  line-height: 0;
+}
+
+.cards-feature .cards-feature-card-image picture,
+.cards-feature .cards-feature-card-image img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.cards-feature .cards-feature-card-body {
+  flex: 1;
+}
+
+.cards-feature .cards-feature-card-body p {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--color-black);
+  line-height: 1.3;
+}
+
+.cards-feature .cards-feature-card-body p strong {
+  font-weight: 400;
+}
+
+@media (width >= 900px) {
+  .cards-feature > ul {
+    flex-direction: row;
+    gap: 16px;
+  }
+
+  .cards-feature > ul > li {
+    flex: 1;
+  }
+
+  .cards-feature .cards-feature-card-body p {
+    font-size: 18px;
+  }
+}

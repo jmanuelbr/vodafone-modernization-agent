@@ -16,5 +16,38 @@ export default async function decorate(block) {
   const footer = document.createElement('div');
   while (fragment.firstElementChild) footer.append(fragment.firstElementChild);
 
+  // Group h3 + ul pairs into columns for grid layout
+  const linkSection = footer.querySelectorAll('.section')[1];
+  if (linkSection) {
+    const wrapper = linkSection.querySelector('.default-content-wrapper');
+    if (wrapper) {
+      const columns = document.createElement('div');
+      columns.className = 'footer-columns';
+      const headings = wrapper.querySelectorAll('h3');
+      headings.forEach((h3) => {
+        const col = document.createElement('div');
+        col.className = 'footer-column';
+        const ul = h3.nextElementSibling;
+        col.append(h3);
+        if (ul && ul.tagName === 'UL') col.append(ul);
+        columns.append(col);
+      });
+      wrapper.textContent = '';
+      wrapper.append(columns);
+    }
+  }
+
+  // Add accordion behavior for h3 + ul pairs on mobile
+  footer.querySelectorAll('h3').forEach((heading) => {
+    heading.addEventListener('click', () => {
+      if (window.innerWidth >= 900) return;
+      heading.classList.toggle('open');
+      const list = heading.nextElementSibling;
+      if (list && list.tagName === 'UL') {
+        list.classList.toggle('open');
+      }
+    });
+  });
+
   block.append(footer);
 }

@@ -1,20 +1,169 @@
+/* Vodafone Footer */
 footer {
-  background-color: var(--light-color);
-  font-size: var(--body-font-size-xs);
+  background-color: var(--color-black);
+  color: var(--color-white);
+  font-size: 14px;
 }
 
 footer .footer > div {
   margin: auto;
   max-width: 1200px;
-  padding: 40px 24px 24px;
 }
 
 footer .footer p {
   margin: 0;
 }
 
+footer a:any-link {
+  color: var(--color-white);
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Social links section (first section) */
+footer .footer > div > div:first-child {
+  padding: 32px 24px;
+  border-bottom: 1px solid var(--color-grey-4);
+}
+
+footer .footer > div > div:first-child .default-content-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+footer .footer > div > div:first-child p {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+footer .footer > div > div:first-child a {
+  font-size: 14px;
+  color: rgb(255 255 255 / 80%);
+}
+
+footer .footer > div > div:first-child a:hover {
+  color: var(--color-white);
+}
+
+/* Link columns section (middle section) */
+footer .footer > div > div:nth-child(2) {
+  padding: 24px;
+}
+
+footer .footer .footer-columns {
+  display: block;
+}
+
+footer .footer .footer-column h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-white);
+  margin: 0;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--color-grey-4);
+  cursor: pointer;
+  position: relative;
+}
+
+footer .footer .footer-column h3::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid var(--color-white);
+  border-bottom: 2px solid var(--color-white);
+  transform: translateY(-50%) rotate(45deg);
+  transition: transform 0.2s;
+}
+
+footer .footer .footer-column h3.open::after {
+  transform: translateY(-50%) rotate(-135deg);
+}
+
+footer .footer .footer-column ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: none;
+}
+
+footer .footer .footer-column ul.open {
+  display: block;
+  padding: 8px 0;
+}
+
+footer .footer .footer-column ul li {
+  padding: 8px 0;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+footer .footer .footer-column ul li a {
+  color: rgb(255 255 255 / 70%);
+  font-size: 14px;
+}
+
+footer .footer .footer-column ul li a:hover {
+  color: var(--color-white);
+}
+
+/* Legal links section (last section) */
+footer .footer > div > div:last-child {
+  border-top: 1px solid var(--color-grey-4);
+  padding: 24px;
+  text-align: center;
+}
+
+footer .footer > div > div:last-child .default-content-wrapper p:first-child {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px 16px;
+  margin-bottom: 16px;
+}
+
+footer .footer > div > div:last-child .default-content-wrapper p:first-child a {
+  font-size: 12px;
+  color: rgb(255 255 255 / 70%);
+}
+
+footer .footer > div > div:last-child .default-content-wrapper p:first-child a:hover {
+  color: var(--color-white);
+}
+
+footer .footer > div > div:last-child .default-content-wrapper p:last-child {
+  font-size: 12px;
+  color: rgb(255 255 255 / 50%);
+}
+
 @media (width >= 900px) {
-  footer .footer > div {
-    padding: 40px 32px 24px;
+  footer .footer .footer-columns {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0 32px;
+  }
+
+  footer .footer > div > div:nth-child(2) {
+    padding: 32px;
+  }
+
+  footer .footer .footer-column h3 {
+    border-bottom: none;
+    cursor: default;
+    padding: 0 0 8px;
+  }
+
+  footer .footer .footer-column h3::after {
+    display: none;
+  }
+
+  footer .footer .footer-column ul {
+    display: block;
   }
 }

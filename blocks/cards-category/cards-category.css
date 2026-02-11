@@ -1,0 +1,95 @@
+/* Cards Category - Vodafone Category Browse Cards */
+
+.cards-category-wrapper {
+  margin: 0;
+}
+
+.cards-category > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  padding-bottom: 8px;
+}
+
+.cards-category > ul::-webkit-scrollbar {
+  display: none;
+}
+
+.cards-category > ul > li {
+  flex: 0 0 140px;
+  scroll-snap-align: start;
+  background-color: var(--color-white);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  cursor: pointer;
+}
+
+.cards-category > ul > li:hover {
+  box-shadow: 0 4px 12px rgb(0 0 0 / 12%);
+  transform: translateY(-2px);
+}
+
+.cards-category .cards-category-card-image {
+  line-height: 0;
+  aspect-ratio: 1;
+  overflow: hidden;
+}
+
+.cards-category .cards-category-card-image picture,
+.cards-category .cards-category-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cards-category .cards-category-card-body {
+  padding: 12px;
+  text-align: center;
+}
+
+.cards-category .cards-category-card-body p {
+  margin: 0;
+}
+
+.cards-category .cards-category-card-body a.button {
+  display: block;
+  background: none;
+  border: none;
+  color: var(--color-black);
+  font-size: 14px;
+  font-weight: 400;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  border-radius: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cards-category .cards-category-card-body a.button:hover {
+  background: none;
+  color: var(--color-red);
+  text-decoration: none;
+}
+
+@media (width >= 900px) {
+  .cards-category > ul {
+    overflow: visible;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .cards-category > ul > li {
+    flex: 0 0 calc((100% - 96px) / 7);
+    min-width: 120px;
+  }
+}

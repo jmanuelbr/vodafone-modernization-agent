@@ -1,0 +1,32 @@
+{
+  "variantName": "cards-feature",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-02-11T11:10:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.vodafone.es/c/particulares/es/",
+    "originPage": "Vodafone Spain homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "minimal",
+    "purpose": "feature-highlights",
+    "imagePattern": "icon",
+    "structure": "icon + bold title"
+  },
+  "contentPattern": {
+    "structure": "image + title",
+    "buttonCount": 0,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": ["feature highlights", "service icons", "benefit summaries"],
+    "notSuitableFor": ["detailed product cards", "blog post listings", "pricing tables"]
+  },
+  "usage": {
+    "pagesUsing": ["content/c/particulares/es/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-02-11T11:10:00.000Z"
+  }
+}

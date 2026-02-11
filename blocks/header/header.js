@@ -109,6 +109,18 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
 }
 
 /**
+ * Creates the green top bar with phone number
+ */
+function buildTopBar() {
+  const topBar = document.createElement('div');
+  topBar.className = 'nav-top-bar';
+  topBar.innerHTML = `<span>Llama gratis al <a href="tel:900921187"><strong>900921187</strong></a></span>
+    <span>|</span>
+    <a href="https://www.vodafone.es/c/particulares/es/te-llamamos/">Te llamamos</a>`;
+  return topBar;
+}
+
+/**
  * loads and decorates the header, mainly the nav
  * @param {Element} block The header block element
  */
@@ -131,10 +143,12 @@ export default async function decorate(block) {
   });
 
   const navBrand = nav.querySelector('.nav-brand');
-  const brandLink = navBrand.querySelector('.button');
-  if (brandLink) {
-    brandLink.className = '';
-    brandLink.closest('.button-container').className = '';
+  if (navBrand) {
+    const brandLink = navBrand.querySelector('.button');
+    if (brandLink) {
+      brandLink.className = '';
+      brandLink.closest('.button-container').className = '';
+    }
   }
 
   const navSections = nav.querySelector('.nav-sections');
@@ -166,6 +180,7 @@ export default async function decorate(block) {
 
   const navWrapper = document.createElement('div');
   navWrapper.className = 'nav-wrapper';
+  navWrapper.append(buildTopBar());
   navWrapper.append(nav);
   block.append(navWrapper);
 }

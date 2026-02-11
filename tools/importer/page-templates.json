@@ -1,0 +1,125 @@
+{
+  "templates": [
+    {
+      "name": "vodafone-homepage",
+      "urls": [
+        "https://www.vodafone.es/c/particulares/es/"
+      ],
+      "description": "Vodafone Spain homepage with hero carousel, pricing plans, product categories, promotional banners, benefit cards, and plan selection cards",
+      "blocks": [
+        {
+          "name": "section-hero",
+          "instances": [
+            "div.ws10-u--pb0 > div > div > div > div > section.ws10-m-cards-discovery-standard-medium-price:first-of-type"
+          ],
+          "section": "full-width hero carousel"
+        },
+        {
+          "name": "carousel-promo",
+          "instances": [
+            "section.ws10-m-cards-discovery-standard-medium-price:first-of-type"
+          ]
+        },
+        {
+          "name": "section-quicklinks",
+          "instances": [
+            "section.ws10-m-banner-slim"
+          ],
+          "section": "quick action links bar"
+        },
+        {
+          "name": "cards-quicklink",
+          "instances": [
+            "section.ws10-m-banner-slim"
+          ]
+        },
+        {
+          "name": "section-pricing",
+          "instances": [
+            "div.ws10-m-card-rate-list"
+          ],
+          "section": "pricing plans grid"
+        },
+        {
+          "name": "cards-pricing",
+          "instances": [
+            "div.ws10-m-card-rate-list"
+          ]
+        },
+        {
+          "name": "section-devices",
+          "instances": [
+            "section.ws10-m-mobile-pdp-one"
+          ],
+          "section": "devices and technology features"
+        },
+        {
+          "name": "cards-feature",
+          "instances": [
+            "section.ws10-m-mobile-pdp-one"
+          ]
+        },
+        {
+          "name": "section-categories",
+          "instances": [
+            "div.ws10-m-carousel-secondary"
+          ],
+          "section": "product category carousel"
+        },
+        {
+          "name": "cards-category",
+          "instances": [
+            "div.ws10-m-carousel-secondary"
+          ]
+        },
+        {
+          "name": "section-plan-amigo",
+          "instances": [
+            "section.ws10-m-text-image"
+          ],
+          "section": "referral program promo banner"
+        },
+        {
+          "name": "columns-promo",
+          "instances": [
+            "section.ws10-m-text-image"
+          ]
+        },
+        {
+          "name": "section-entertainment",
+          "instances": [
+            "section.ws10-m-header-section"
+          ],
+          "section": "entertainment section heading + TV promo"
+        },
+        {
+          "name": "columns-media",
+          "instances": [
+            "section.ws10-m-header-section"
+          ]
+        },
+        {
+          "name": "section-benefits",
+          "instances": [
+            "div.ws10-m-module-hifi"
+          ],
+          "section": "benefits of Vodafone cards"
+        },
+        {
+          "name": "cards-benefit",
+          "instances": [
+            "div.ws10-m-module-hifi",
+            "div.ws10-m-addons"
+          ]
+        },
+        {
+          "name": "section-choose-plan",
+          "instances": [
+            "div.ws10-m-addons"
+          ],
+          "section": "choose your plan cards"
+        }
+      ]
+    }
+  ]
+}

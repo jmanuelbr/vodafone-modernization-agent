@@ -1,0 +1,287 @@
+/* Carousel Promo - Vodafone Hero Banner */
+
+.carousel-promo-wrapper {
+  margin: 0;
+  padding: 0;
+}
+
+.carousel-promo-container {
+  margin: 0;
+  padding: 0;
+}
+
+.carousel-promo-container > div {
+  max-width: 100%;
+  padding: 0;
+}
+
+.carousel-promo .carousel-promo-slides-container {
+  position: relative;
+}
+
+.carousel-promo .carousel-promo-slides,
+.carousel-promo .carousel-promo-slide-indicators {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.carousel-promo .carousel-promo-slides {
+  display: flex;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  overflow: scroll clip;
+  scrollbar-width: none;
+}
+
+.carousel-promo .carousel-promo-slides::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-promo .carousel-promo-slide {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  min-height: 500px;
+  background-color: var(--color-black);
+  overflow: hidden;
+}
+
+/* Background image */
+.carousel-promo .carousel-promo-slide .carousel-promo-slide-image {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.carousel-promo .carousel-promo-slide .carousel-promo-slide-image picture {
+  position: absolute;
+  inset: 0;
+}
+
+.carousel-promo .carousel-promo-slide .carousel-promo-slide-image picture > img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* Content overlay */
+.carousel-promo .carousel-promo-slide .carousel-promo-slide-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 32px 24px;
+  color: var(--color-white);
+  min-height: 500px;
+  background: linear-gradient(to right, rgb(13 13 13 / 85%) 0%, rgb(13 13 13 / 60%) 50%, transparent 80%);
+}
+
+.carousel-promo .carousel-promo-slide .carousel-promo-slide-content p {
+  margin: 4px 0;
+  color: var(--color-white);
+}
+
+/* Badge (first paragraph - discount label) */
+.carousel-promo .carousel-promo-slide .carousel-promo-slide-content p:first-child {
+  display: inline-block;
+  background-color: var(--color-red);
+  color: var(--color-white);
+  font-size: 14px;
+  font-weight: 700;
+  padding: 4px 16px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+  width: fit-content;
+}
+
+/* Title (second paragraph with strong) */
+.carousel-promo .carousel-promo-slide .carousel-promo-slide-content p:nth-child(2) {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+
+/* Description */
+.carousel-promo .carousel-promo-slide .carousel-promo-slide-content p:nth-child(3) {
+  font-size: 16px;
+  line-height: 1.4;
+  margin-bottom: 8px;
+  opacity: 0.9;
+}
+
+/* Price */
+.carousel-promo .carousel-promo-slide .carousel-promo-slide-content p:nth-child(4) {
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.carousel-promo .carousel-promo-slide .carousel-promo-slide-content p:nth-child(4) strong {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* Price subtitle */
+.carousel-promo .carousel-promo-slide .carousel-promo-slide-content p:nth-child(5) {
+  font-size: 14px;
+  opacity: 0.8;
+  margin-bottom: 16px;
+}
+
+/* CTA buttons (last paragraph) */
+.carousel-promo .carousel-promo-slide .carousel-promo-slide-content p:last-child {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.carousel-promo .carousel-promo-slide .carousel-promo-slide-content p:last-child a {
+  display: inline-block;
+  padding: 8px 28px;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: 400;
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+  white-space: nowrap;
+}
+
+/* Primary CTA - outline white */
+.carousel-promo .carousel-promo-slide .carousel-promo-slide-content p:last-child a:first-child {
+  background-color: transparent;
+  border: 2px solid var(--color-white);
+  color: var(--color-white);
+}
+
+/* Secondary CTA - solid red */
+.carousel-promo .carousel-promo-slide .carousel-promo-slide-content p:last-child a:last-child {
+  background-color: var(--color-red);
+  border: 2px solid var(--color-red);
+  color: var(--color-white);
+}
+
+.carousel-promo .carousel-promo-slide .carousel-promo-slide-content p:last-child a:first-child:hover {
+  background-color: var(--color-white);
+  color: var(--color-black);
+}
+
+.carousel-promo .carousel-promo-slide .carousel-promo-slide-content p:last-child a:last-child:hover {
+  background-color: var(--color-red-hover);
+  border-color: var(--color-red-hover);
+}
+
+/* Navigation arrows */
+.carousel-promo .carousel-promo-navigation-buttons {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 16px;
+  right: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.carousel-promo .carousel-promo-navigation-buttons button {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  margin: 0;
+  border-radius: 50%;
+  padding: 0;
+  background-color: rgb(255 255 255 / 80%);
+  border: none;
+  transition: background-color 0.2s;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.carousel-promo .carousel-promo-navigation-buttons button:hover {
+  background-color: var(--color-white);
+}
+
+.carousel-promo .carousel-promo-navigation-buttons button::after {
+  display: block;
+  content: '';
+  border: 2px solid var(--color-black);
+  border-bottom: 0;
+  border-left: 0;
+  height: 10px;
+  width: 10px;
+  position: absolute;
+  top: 50%;
+  left: calc(50% + 2px);
+  transform: translate(-50%, -50%) rotate(-135deg);
+}
+
+.carousel-promo .carousel-promo-navigation-buttons button.slide-next::after {
+  transform: translate(-50%, -50%) rotate(45deg);
+  left: calc(50% - 2px);
+}
+
+/* Slide indicators */
+.carousel-promo .carousel-promo-slide-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px 12px;
+  line-height: 0;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.carousel-promo .carousel-promo-slide-indicator button {
+  width: 10px;
+  height: 10px;
+  margin: 0;
+  padding: 0;
+  border-radius: 50%;
+  border: 2px solid var(--color-grey-3);
+  background-color: transparent;
+  transition: background-color 0.2s, border-color 0.2s;
+  cursor: pointer;
+}
+
+.carousel-promo .carousel-promo-slide-indicator button:disabled {
+  background-color: var(--color-red);
+  border-color: var(--color-red);
+  cursor: default;
+}
+
+.carousel-promo .carousel-promo-slide-indicator button:hover:not(:disabled) {
+  border-color: var(--color-black);
+}
+
+/* Desktop */
+@media (width >= 900px) {
+  .carousel-promo .carousel-promo-slide {
+    min-height: 560px;
+  }
+
+  .carousel-promo .carousel-promo-slide .carousel-promo-slide-content {
+    padding: 60px 80px;
+    max-width: 55%;
+    min-height: 560px;
+  }
+
+  .carousel-promo .carousel-promo-slide .carousel-promo-slide-content p:nth-child(2) {
+    font-size: 36px;
+  }
+
+  .carousel-promo .carousel-promo-slide .carousel-promo-slide-content p:nth-child(4) strong {
+    font-size: 64px;
+  }
+
+  .carousel-promo .carousel-promo-navigation-buttons {
+    left: 32px;
+    right: 32px;
+  }
+}

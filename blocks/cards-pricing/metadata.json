@@ -1,0 +1,32 @@
+{
+  "variantName": "cards-pricing",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-02-11T11:10:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.vodafone.es/c/particulares/es/",
+    "originPage": "Vodafone Spain homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "pricing-plans",
+    "imagePattern": "noimg",
+    "structure": "badge + price + features list + 2 CTAs"
+  },
+  "contentPattern": {
+    "structure": "pricing info + feature list + CTAs",
+    "buttonCount": 2,
+    "imageCount": 0
+  },
+  "reuseGuidance": {
+    "suitableFor": ["pricing pages", "plan comparison sections", "offer listings"],
+    "notSuitableFor": ["image galleries", "blog listings", "team member cards"]
+  },
+  "usage": {
+    "pagesUsing": ["content/c/particulares/es/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-02-11T11:10:00.000Z"
+  }
+}

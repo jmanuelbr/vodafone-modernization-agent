@@ -1,0 +1,32 @@
+{
+  "variantName": "cards-benefit",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-02-11T11:10:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.vodafone.es/c/particulares/es/",
+    "originPage": "Vodafone Spain homepage",
+    "blockPosition": "bottom"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "benefit-showcase",
+    "imagePattern": "icon",
+    "structure": "image + title + description + optional CTA"
+  },
+  "contentPattern": {
+    "structure": "image + title + description + CTA",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": ["benefit sections", "feature showcases", "service descriptions", "plan selection cards"],
+    "notSuitableFor": ["pricing tables", "image galleries", "navigation elements"]
+  },
+  "usage": {
+    "pagesUsing": ["content/c/particulares/es/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-02-11T11:10:00.000Z"
+  }
+}

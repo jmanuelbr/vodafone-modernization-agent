@@ -1,0 +1,186 @@
+/* Cards Pricing - Vodafone Pricing Cards */
+
+.cards-pricing-wrapper {
+  margin: 0;
+}
+
+.cards-pricing > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  padding-bottom: 8px;
+}
+
+.cards-pricing > ul::-webkit-scrollbar {
+  display: none;
+}
+
+.cards-pricing > ul > li {
+  flex: 0 0 280px;
+  scroll-snap-align: start;
+  background-color: var(--color-white);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--color-grey-1);
+  transition: box-shadow 0.2s ease;
+}
+
+.cards-pricing > ul > li:hover {
+  box-shadow: 0 4px 16px rgb(0 0 0 / 12%);
+}
+
+/* "Best seller" card highlight */
+.cards-pricing > ul > li:last-child {
+  border: 2px solid var(--color-red);
+}
+
+/* Hide image column for pricing cards */
+.cards-pricing .cards-pricing-card-image {
+  display: none;
+}
+
+.cards-pricing .cards-pricing-card-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+/* Badge / Offer label (first paragraph with strong) */
+.cards-pricing .cards-pricing-card-body > p:first-child strong {
+  display: inline-block;
+  background-color: var(--color-red);
+  color: var(--color-white);
+  font-size: 14px;
+  font-weight: 700;
+  padding: 4px 16px;
+  border-radius: 20px;
+}
+
+/* Price display */
+.cards-pricing .cards-pricing-card-body > p:nth-child(2) {
+  margin: 12px 0 4px;
+  font-size: 16px;
+  color: var(--color-black);
+}
+
+.cards-pricing .cards-pricing-card-body > p:nth-child(2) strong {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-black);
+}
+
+/* Price subtitle (e.g., "Precio final" or "3 meses, luego 56€") */
+.cards-pricing .cards-pricing-card-body > p:nth-child(3) {
+  font-size: 14px;
+  color: var(--color-grey-3);
+  margin: 0 0 16px;
+}
+
+/* Feature list */
+.cards-pricing .cards-pricing-card-body ul {
+  list-style: none;
+  margin: 0 0 16px;
+  padding: 0;
+  flex: 1;
+}
+
+.cards-pricing .cards-pricing-card-body ul li {
+  position: relative;
+  padding: 8px 0;
+  padding-left: 24px;
+  font-size: 16px;
+  color: var(--color-grey-4);
+  line-height: 1.4;
+  border-bottom: 1px solid var(--color-grey-1);
+}
+
+.cards-pricing .cards-pricing-card-body ul li:last-child {
+  border-bottom: none;
+}
+
+.cards-pricing .cards-pricing-card-body ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 12px;
+  width: 14px;
+  height: 8px;
+  border-left: 2px solid var(--color-green);
+  border-bottom: 2px solid var(--color-green);
+  transform: rotate(-45deg);
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.cards-pricing .cards-pricing-card-body ul li strong {
+  font-weight: 700;
+  color: var(--color-black);
+}
+
+/* "La más vendida" label */
+.cards-pricing .cards-pricing-card-body > p:first-child strong:only-child {
+  background-color: var(--color-teal);
+}
+
+/* CTA buttons (last paragraph) */
+.cards-pricing .cards-pricing-card-body > p:last-child {
+  display: flex;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 16px;
+}
+
+.cards-pricing .cards-pricing-card-body > p:last-child a {
+  flex: 1;
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 25px;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.2s, border-color 0.2s;
+  white-space: nowrap;
+}
+
+.cards-pricing .cards-pricing-card-body > p:last-child a:first-child {
+  background-color: transparent;
+  border: 2px solid var(--color-black);
+  color: var(--color-black);
+}
+
+.cards-pricing .cards-pricing-card-body > p:last-child a:last-child {
+  background-color: var(--color-red);
+  border: 2px solid var(--color-red);
+  color: var(--color-white);
+}
+
+.cards-pricing .cards-pricing-card-body > p:last-child a:first-child:hover {
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
+
+.cards-pricing .cards-pricing-card-body > p:last-child a:last-child:hover {
+  background-color: var(--color-red-hover);
+  border-color: var(--color-red-hover);
+}
+
+@media (width >= 900px) {
+  .cards-pricing > ul {
+    overflow: visible;
+    flex-wrap: nowrap;
+    justify-content: center;
+  }
+
+  .cards-pricing > ul > li {
+    flex: 1;
+    max-width: 300px;
+  }
+}

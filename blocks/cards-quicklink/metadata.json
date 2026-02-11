@@ -1,0 +1,32 @@
+{
+  "variantName": "cards-quicklink",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-02-11T11:10:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.vodafone.es/c/particulares/es/",
+    "originPage": "Vodafone Spain homepage",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "compact",
+    "purpose": "quick-navigation",
+    "imagePattern": "icon",
+    "structure": "icon + label link"
+  },
+  "contentPattern": {
+    "structure": "icon + text link",
+    "buttonCount": 0,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": ["quick action bars", "shortcut navigation", "homepage quick links"],
+    "notSuitableFor": ["detailed content cards", "product listings", "image galleries"]
+  },
+  "usage": {
+    "pagesUsing": ["content/c/particulares/es/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-02-11T11:10:00.000Z"
+  }
+}
