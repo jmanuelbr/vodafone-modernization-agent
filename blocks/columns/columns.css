@@ -22,6 +22,13 @@
   display: block;
 }
 
+/* Product gallery: all columns are image-only (PDP 4-image gallery) */
+.columns-4-cols > div > .columns-img-col img {
+  border-radius: 0;
+  object-fit: contain;
+  max-height: 320px;
+}
+
 /* Text column typography */
 .columns > div > div:not(.columns-img-col) h2 {
   font-size: var(--heading-font-size-xl);
@@ -40,6 +47,14 @@
   line-height: 26px;
   color: var(--color-black);
   margin: 0 0 16px;
+}
+
+/* Steps text columns (4-col text-only) - bold step numbers */
+.columns-4-cols > div > div:not(.columns-img-col) p strong {
+  display: block;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 4px;
 }
 
 .columns > div > div:not(.columns-img-col) ul {
@@ -75,7 +90,35 @@
     order: unset;
   }
 
-  .columns > div > .columns-img-col {
+  /* 2-col image+text layout: image takes 45% */
+  .columns:not(.columns-4-cols) > div > .columns-img-col {
     flex: 0 0 45%;
+  }
+
+  /* 4-col layouts: equal columns */
+  .columns-4-cols > div > div {
+    flex: 1;
+  }
+
+  /* 4-col image gallery: smaller gap */
+  /* stylelint-disable-next-line no-descending-specificity */
+  .columns-4-cols > div > .columns-img-col {
+    flex: 1;
+  }
+
+  /* stylelint-disable-next-line no-descending-specificity */
+  .columns-4-cols > div {
+    gap: 16px;
+  }
+
+  /* 4-col text steps: centered text */
+  .columns-4-cols > div > div:not(.columns-img-col) {
+    text-align: center;
+    font-size: 14px;
+  }
+
+  .columns-4-cols > div > div:not(.columns-img-col) p {
+    font-size: 14px;
+    line-height: 20px;
   }
 }

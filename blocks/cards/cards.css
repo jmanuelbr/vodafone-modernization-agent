@@ -1,4 +1,4 @@
-/* Cards - Vodafone Advantage Cards */
+/* Cards - Vodafone Advantage Cards (Elige tu plan) */
 
 .cards > ul {
   list-style: none;
@@ -32,6 +32,15 @@
 
 .cards .cards-card-body {
   margin: 0;
+}
+
+/* When image is inline in a paragraph with title */
+.cards .cards-card-body p:first-child img {
+  width: 80px;
+  height: auto;
+  vertical-align: middle;
+  margin-right: 8px;
+  object-fit: contain;
 }
 
 .cards .cards-card-body p {
@@ -71,6 +80,6 @@
 
 @media (width >= 900px) {
   .cards > ul {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }

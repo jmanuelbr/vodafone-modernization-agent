@@ -12,28 +12,36 @@ export default function decorate(block) {
 
     const body = li.querySelector('.cards-pricing-card-body');
     if (body) {
-      const featureList = body.querySelector(':scope > ul');
-      if (featureList) {
-        // Check first paragraph for highlight badge ("La más vendida")
-        const firstP = body.querySelector(':scope > p:first-child');
-        if (firstP) {
-          const strong = firstP.querySelector('strong');
-          if (strong && /más vendida/i.test(strong.textContent)) {
-            li.classList.add('highlighted');
-            const tab = document.createElement('div');
-            tab.className = 'cards-pricing-highlight-tab';
-            tab.textContent = strong.textContent.trim();
-            li.prepend(tab);
-            firstP.remove();
-          }
+      // Check first paragraph for highlight badge ("La más vendida")
+      const firstP = body.querySelector(':scope > p:first-child');
+      if (firstP) {
+        const strong = firstP.querySelector('strong');
+        if (strong && /más vendida/i.test(strong.textContent)) {
+          li.classList.add('highlighted');
+          const tab = document.createElement('div');
+          tab.className = 'cards-pricing-highlight-tab';
+          tab.textContent = strong.textContent.trim();
+          li.prepend(tab);
+          firstP.remove();
         }
+      }
 
+      const featureList = body.querySelector(':scope > ul');
+      // Find CTA paragraph (contains links)
+      const ctaParagraph = [...body.querySelectorAll(':scope > p')].find(
+        (p) => p.querySelector('a'),
+      );
+
+      // Determine boundary element for price box
+      const boundary = featureList || ctaParagraph;
+
+      if (boundary) {
         // Create price box wrapper for badge + price + subtext
         const priceBox = document.createElement('div');
         priceBox.className = 'cards-pricing-price-box';
 
-        // Move all elements before the feature list into the price box
-        while (body.firstChild && body.firstChild !== featureList) {
+        // Move all elements before the boundary into the price box
+        while (body.firstChild && body.firstChild !== boundary) {
           const child = body.firstChild;
           // Skip empty paragraphs
           if (child.nodeType === 1 && child.tagName === 'P'
@@ -43,6 +51,16 @@ export default function decorate(block) {
             priceBox.append(child);
           }
         }
+
+        // Classify price box paragraphs for styling
+        [...priceBox.querySelectorAll(':scope > p')].forEach((p) => {
+          const text = p.textContent.trim();
+          if (/€\/mes/.test(text)) {
+            p.classList.add('cards-pricing-amount');
+          } else if (text.startsWith('-')) {
+            p.classList.add('cards-pricing-features');
+          }
+        });
 
         if (priceBox.children.length > 0) {
           body.prepend(priceBox);

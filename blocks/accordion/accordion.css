@@ -74,3 +74,14 @@
   border-top: none;
   background-color: transparent;
 }
+
+/* Spec categories (bold labels) displayed on separate lines */
+.accordion details .accordion-item-body > p > strong {
+  display: block;
+  margin-top: 12px;
+  color: var(--color-black);
+}
+
+.accordion details .accordion-item-body > p > strong:first-child {
+  margin-top: 0;
+}
