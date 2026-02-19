@@ -1,0 +1,67 @@
+/* Payment Options - Squared button tab switcher */
+main > .section > .payment-options-wrapper {
+  padding: 0;
+  margin: 0;
+  max-width: none;
+}
+
+.payment-options .payment-options-tabs {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.payment-options .payment-options-tab {
+  flex: 1;
+  padding: 20px 24px;
+  background: var(--color-white, #fff);
+  border: 2px solid var(--color-grey-2, #e0e0e0);
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 700;
+  font-family: var(--body-font-family);
+  color: var(--color-black, #000);
+  cursor: pointer;
+  transition: border-color 0.2s;
+  margin: 0;
+  text-align: center;
+}
+
+.payment-options .payment-options-tab:hover {
+  border-color: var(--color-grey-3, #999);
+}
+
+.payment-options .payment-options-tab.active {
+  border-color: var(--color-black, #333);
+}
+
+/* Panels */
+.payment-options .payment-options-panel {
+  display: none;
+}
+
+.payment-options .payment-options-panel.active {
+  display: block;
+}
+
+/* Payment option cards */
+.payment-options .payment-options-cards {
+  display: flex;
+  gap: 16px;
+}
+
+.payment-options .payment-options-card {
+  flex: 1;
+  padding: 24px 20px;
+  border: 2px solid var(--color-grey-2, #e0e0e0);
+  border-radius: 8px;
+  text-align: center;
+}
+
+.payment-options .payment-options-card p {
+  margin: 4px 0;
+}
+
+.payment-options .payment-options-card p:first-child strong {
+  font-size: 24px;
+}

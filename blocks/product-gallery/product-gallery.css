@@ -1,0 +1,116 @@
+/* Product Gallery - PDP Image Gallery with thumbnail switching */
+
+main > .section > .product-gallery-wrapper {
+  margin: 0;
+  padding: 0;
+  max-width: none;
+}
+
+.product-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  max-width: 453px;
+}
+
+/* Main product image */
+.product-gallery .product-gallery-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 233px;
+}
+
+.product-gallery .product-gallery-main picture {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.product-gallery .product-gallery-main img {
+  max-width: 233px;
+  max-height: 233px;
+  object-fit: contain;
+  display: block;
+}
+
+/* Thumbnail strip */
+.product-gallery .product-gallery-thumbs {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  line-height: 0;
+}
+
+.product-gallery .product-gallery-thumb {
+  width: 56px;
+  height: 56px;
+  margin: 0;
+  padding: 4px;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  background: var(--color-white);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.2s;
+}
+
+.product-gallery .product-gallery-thumb:hover {
+  border-color: var(--color-grey-3);
+}
+
+.product-gallery .product-gallery-thumb.active {
+  border-color: var(--color-black);
+}
+
+.product-gallery .product-gallery-thumb picture {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.product-gallery .product-gallery-thumb img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* Section-level 2-column PDP layout */
+@media (width >= 900px) {
+  .product-gallery-container {
+    display: grid;
+    grid-template-columns: minmax(auto, 480px) 1fr;
+    gap: 0 40px;
+    align-items: start;
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: var(--container-padding);
+  }
+
+  /* Override EDS default wrapper styles within PDP grid */
+  main > .product-gallery-container > div {
+    padding: 0;
+    margin: 0;
+    max-width: none;
+  }
+
+  /* Gallery on left - sticky, spans all rows */
+  .product-gallery-container > .product-gallery-wrapper {
+    grid-column: 1;
+    grid-row: 1 / span 20;
+    position: sticky;
+    top: 0;
+    align-self: start;
+  }
+
+  /* All other content flows in right column */
+  .product-gallery-container > *:not(.product-gallery-wrapper) {
+    grid-column: 2;
+  }
+}

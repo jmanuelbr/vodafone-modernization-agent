@@ -172,6 +172,34 @@
           ]
         }
       ]
+    },
+    {
+      "name": "product-detail-page",
+      "urls": [
+        "https://www.vodafone.es/c/tienda-online/autonomos/catalogo-moviles/xiaomi-redmi-note-15-pro-5g-negro-256gb-316376"
+      ],
+      "description": "Vodafone product detail page (PDP) for mobile phones with product gallery, tariff pricing cards, payment options, purchase process steps, promotions, and specifications accordion",
+      "blocks": [
+        {
+          "name": "columns",
+          "instances": [
+            ".mva10-c-image-gallery",
+            ".mva10-c-timeline-steps"
+          ]
+        },
+        {
+          "name": "cards-pricing",
+          "instances": [
+            ".card-rate-composition"
+          ]
+        },
+        {
+          "name": "accordion",
+          "instances": [
+            "mva10-c-accordion"
+          ]
+        }
+      ]
     }
   ]
 }

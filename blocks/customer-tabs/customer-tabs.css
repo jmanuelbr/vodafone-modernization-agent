@@ -1,0 +1,55 @@
+/* Customer Tabs - Underline style tab bar */
+main > .section > .customer-tabs-wrapper {
+  padding: 0;
+  margin: 0;
+  max-width: none;
+}
+
+.customer-tabs {
+  margin-bottom: 8px;
+}
+
+.customer-tabs .customer-tabs-bar {
+  display: flex;
+  border-bottom: 1px solid var(--color-grey-2, #e0e0e0);
+}
+
+.customer-tabs .customer-tabs-btn {
+  flex: 1;
+  padding: 12px 24px;
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  font-size: var(--body-font-size-m, 16px);
+  font-family: var(--body-font-family);
+  color: var(--color-grey-3, #999);
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+  margin: 0;
+  text-align: center;
+}
+
+.customer-tabs .customer-tabs-btn:hover {
+  color: var(--color-black, #000);
+}
+
+.customer-tabs .customer-tabs-btn.active {
+  color: var(--color-black, #000);
+  border-bottom-color: var(--color-red, #e60000);
+  font-weight: 700;
+}
+
+/* Placeholder for Ya soy cliente tab */
+.customer-tabs-placeholder {
+  padding: 40px 20px;
+  text-align: center;
+  color: var(--color-grey-3, #666);
+  font-size: var(--body-font-size-m, 16px);
+}
+
+/* Override grid placement for tab 1 placeholder */
+@media (width >= 900px) {
+  .product-gallery-container > .customer-tab-1 {
+    grid-column: 2;
+  }
+}

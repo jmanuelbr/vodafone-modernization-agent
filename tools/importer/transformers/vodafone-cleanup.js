@@ -23,9 +23,18 @@ const TransformHook = {
 export default function transform(hookName, element, payload) {
   if (hookName === TransformHook.beforeTransform) {
     // Remove breadcrumb navigation (not authorable content)
-    // EXTRACTED: Found class="ws10-m-with-breadcrumb" in captured DOM
+    // EXTRACTED: Found class="ws10-m-with-breadcrumb" in captured DOM (homepage/tarifas)
+    // EXTRACTED: Found nav[aria-label="breadcrumb"] in PDP captured DOM
     WebImporter.DOMUtils.remove(element, [
       '.ws10-m-with-breadcrumb',
+      'nav[aria-label="breadcrumb"]',
+    ]);
+
+    // Remove PDP-specific non-content elements (found in PDP captured DOM)
+    // EXTRACTED: Found ul.usp-bar in PDP cleaned.html
+    // EXTRACTED: Found .mva10-c-timeline-steps--horizontal (purchase process UI)
+    WebImporter.DOMUtils.remove(element, [
+      '.usp-bar',
     ]);
 
     // Remove carousel UI controls (navigation dots, play button, animation menu)

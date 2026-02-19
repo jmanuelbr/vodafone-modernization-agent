@@ -81,7 +81,7 @@
 .cards-pricing .cards-pricing-price-box {
   background-color: var(--color-grey-1);
   border-radius: 12px;
-  padding: 8px 20px;
+  padding: 16px 20px;
   min-height: 84px;
   display: flex;
   flex-direction: column;
@@ -90,6 +90,15 @@
 
 .cards-pricing .cards-pricing-price-box > p {
   margin: 0;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+/* Badge text in price box (e.g., "Tarifa exclusiva web", "La recomendada") */
+.cards-pricing .cards-pricing-price-box > p:first-child > strong:only-child {
+  color: var(--color-red);
+  font-size: 14px;
+  font-weight: 700;
 }
 
 /* Badge line - only when price box has 3 paragraphs (badge + price + subtext) */
@@ -160,6 +169,31 @@
 .cards-pricing .cards-pricing-price-box > p:last-child {
   font-size: 14px;
   color: var(--color-black);
+}
+
+/* Amount paragraph (any position) - used for PDP cards with varied structure */
+/* stylelint-disable-next-line no-descending-specificity */
+.cards-pricing .cards-pricing-price-box > p.cards-pricing-amount {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-black);
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.cards-pricing .cards-pricing-price-box > p.cards-pricing-amount strong {
+  font-size: 64px;
+  font-weight: 800;
+  line-height: 48px;
+  color: var(--color-black);
+  margin-right: 4px;
+}
+
+/* Features paragraph (dash-separated items in PDP cards) */
+.cards-pricing .cards-pricing-price-box > p.cards-pricing-features {
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--color-grey-5);
+  margin-top: 8px;
 }
 
 /* Feature list - no checkmarks, no borders */
